@@ -1,9 +1,7 @@
-# my fish Configuration for nixos (provided as flake module)
-# this is my learning purpose and personal use but if you want to use yes you can!!!
-# But your system need to be handle with hjem and hjem-rum if you want to know how to configure
-# check this repo host/shizuru/hjem.nix
+# My fish Configuration for nixos (provided as flake module) this is my learning purpose and personal use but if you want to use yes you can!!!But your system need to be handle with hjem and hjem-rum if you want to know how to configure
+# check this repo host/shizuru/hjem.nix || [`hjem.nix`](https://github.com/maotseantonio/shizuru/blob/main/hosts/shizuru/hjem.nix)
 
-1. hjem and hjem-rum [`hjem.nix`](https://github.com/maotseantonio/shizuru)
+# On this time fish_variable will need to manually add because nix symlink cannt handle global variables. The fish_variable also contain in this repo 
 
 ### 🖼️ Gallery for my fish 
 
