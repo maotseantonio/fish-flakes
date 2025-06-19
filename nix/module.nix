@@ -16,6 +16,7 @@
       fd
       zoxide
       atuin
+      g-ls
     ];
 
    

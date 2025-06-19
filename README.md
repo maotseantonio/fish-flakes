@@ -1,13 +1,26 @@
-# My fish Configuration for nixos (provided as flake module) this is my learning purpose and personal use but if you want to use yes you can!!!But your system need to be handle with hjem and hjem-rum if you want to know how to configure
-# check this repo host/shizuru/hjem.nix || [`hjem.nix`](https://github.com/maotseantonio/shizuru/blob/main/hosts/shizuru/hjem.nix)
+<div align="center"><img src="./assets/nixos-logo.png" width="300px"></div>
+<h1 align="center">Useless Fish Config Flake</h1>
+## ✨ Features
 
-# On this time fish_variable will need to manually add because nix symlink cannt handle global variables. The fish_variable also contain in this repo 
+- ❄️ Flakes - for precise dependency management of the entire fish config.
+- 🏡 hjem - to configure symlink to user directory.
+- 💽 hjem-rum - only for flex.
+- ⚠️ zoxide - for interactive and useful cd 
+- 💈 Theme - Catppuccin Mocha.
+- 🍎 atuin - for history search.
+- 🔐 eza - more beautiful replacement for ls.
+- 🤖 lsd - eza replacement.
+- ⚡ g-ls - for nushell style ls comment.
+- 💭 bat - cat replacement.
+- 🔥 starship - powerful prompt.
+- 🎁 FZF - for some terminal work.
+- 📁 Config file structure and modules with options.
 
 ### 🖼️ Gallery for my fish 
 
 <p align="center">
-   <img src="./fish-1.png" style="margin-bottom: 10px;"/> <br>
-   <img src="./fish-2.png" style="margin-bottom: 10px;"/> <br>
+   <img src="./assets/fish-1.png" style="margin-bottom: 10px;"/> <br>
+   <img src="./assets/fish-2.png" style="margin-bottom: 10px;"/> <br>
     Screenshots last updated <b>2025-6-19</b>
 </p>
 
