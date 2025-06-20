@@ -1,4 +1,3 @@
-
 { self }: {
   config,
   lib,
@@ -11,12 +10,21 @@ let
 in {
   options.rum.programs.fish = {
     enable = lib.mkEnableOption "Enable Fish shell and configuration";
-    defaultShell = lib.mkEnableOption "Set Fish as default shell";
+
+    defaultShell = lib.mkEnableOption "Set Fish as the default shell";
+
+    mainUser = lib.mkOption {
+      type = lib.types.str;
+      default = "antonio";
+      description = "Username to set Fish shell for";
+    };
+
     wrapperPackages = lib.mkOption {
       type = lib.types.listOf lib.types.package;
       default = [];
       description = "Extra packages wrapped in Fish shell env";
     };
+
     plugins = lib.mkOption {
       type = lib.types.listOf lib.types.str;
       default = [];
@@ -50,19 +58,19 @@ in {
       ".config/fish/user_variables.fish".source = "${self}/fish-config/user_variables.fish";
     };
 
-    # Auto set default shell (system level, persistent)
+    # Auto set default shell
     system.activationScripts.setFishShell = lib.mkIf cfg.defaultShell ''
-      if [ "$(getent passwd ${config.users.users.${config.mainUser}.name} | cut -d: -f7)" != "${pkgs.fish}/bin/fish" ]; then
-        echo "Setting fish as default shell for ${config.mainUser}"
-        chsh -s ${pkgs.fish}/bin/fish ${config.mainUser}
+      if [ "$(getent passwd ${cfg.mainUser} | cut -d: -f7)" != "${pkgs.fish}/bin/fish" ]; then
+        echo "Setting fish as default shell for ${cfg.mainUser}"
+        chsh -s ${pkgs.fish}/bin/fish ${cfg.mainUser}
       fi
     '';
 
-    # Auto-install Fisher plugins (if any)
+    # Install fisher plugins (if any)
     system.activationScripts.installFisher = lib.mkIf (cfg.plugins != []) ''
       echo "Installing fisher plugins for fish..."
-      export HOME=/home/${config.mainUser}
-      sudo -u ${config.mainUser} fish -c 'fisher install ${lib.concatStringsSep " " cfg.plugins}'
+      export HOME=/home/${cfg.mainUser}
+      sudo -u ${cfg.mainUser} fish -c 'fisher install ${lib.concatStringsSep " " cfg.plugins}'
     '';
   };
 }

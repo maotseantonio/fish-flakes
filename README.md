@@ -3,6 +3,8 @@
 ## ✨ Features
 
 - ❄️ Flakes - for precise dependency management of the entire fish config.
+- 🏡 defaultshell - options for default shell.
+- 🏡 mainUser - main user option default is my username("antonio").
 - 🏡 hjem - to configure symlink to user directory.
 - 💽 hjem-rum - only for flex.
 - ⚠️ zoxide - for interactive and useful cd 
@@ -48,4 +50,25 @@ Usage with a minimal system flake:
 
   }
 ```
+
+In your `host.nix` or `config.nix` add this 
+
+```nix
+
+{
+   
+  rum.programs.fish = {
+      enable = true;
+      defaultShell = true;
+      mainUser = "username"; #default is antonio
+      wrapperPackages = [ pkgs.tldr pkgs.lazygit ];
+      plugins = [
+        "jorgebucaran/fisher"
+        "patrickf3139/fzf.fish"
+       ];
+    };
+
+  }
+```
+
 
