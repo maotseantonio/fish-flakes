@@ -47,7 +47,7 @@ in {
 
     # Symlink fish config subfiles (without fish_variables)
     hj.files = {
-      ".config/fish/config.fish".source = "${self}/fish-config/config.fish";
+#      ".config/fish/config.fish".source = "${self}/fish-config/config.fish";
       ".config/fish/functions".source = "${self}/fish-config/functions";
       ".config/fish/completions".source = "${self}/fish-config/completions";
       ".config/fish/conf.d".source = "${self}/fish-config/conf.d";
