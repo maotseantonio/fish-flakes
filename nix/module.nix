@@ -34,20 +34,11 @@ in {
 
   config = lib.mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
-      fish
-      fzf
-      starship
-      eza
-      bat
-      fd
-      zoxide
-      atuin
-      g-ls
+      fish fzf starship eza bat fd zoxide atuin g-ls
     ] ++ cfg.wrapperPackages;
 
-    # Symlink fish config subfiles (without fish_variables)
+    # Symlink fish config (except completions-extra)
     hj.files = {
-#      ".config/fish/config.fish".source = "${self}/fish-config/config.fish";
       ".config/fish/functions".source = "${self}/fish-config/functions";
       ".config/fish/completions".source = "${self}/fish-config/completions";
       ".config/fish/conf.d".source = "${self}/fish-config/conf.d";
@@ -58,7 +49,14 @@ in {
       ".config/fish/user_variables.fish".source = "${self}/fish-config/user_variables.fish";
     };
 
-    # Auto set default shell
+    # Ensure completions-extra exists for user-managed completions
+    system.activationScripts.ensureFishWritableCompletions = lib.stringAfter [ "users" ] ''
+      mkdir -p /home/${cfg.mainUser}/.config/fish/completions-extra
+      chown ${cfg.mainUser}:${cfg.mainUser} /home/${cfg.mainUser}/.config/fish/completions-extra
+      chmod 755 /home/${cfg.mainUser}/.config/fish/completions-extra
+    '';
+
+    # Set default shell
     system.activationScripts.setFishShell = lib.mkIf cfg.defaultShell ''
       if [ "$(getent passwd ${cfg.mainUser} | cut -d: -f7)" != "${pkgs.fish}/bin/fish" ]; then
         echo "Setting fish as default shell for ${cfg.mainUser}"
@@ -66,7 +64,7 @@ in {
       fi
     '';
 
-    # Install fisher plugins (if any)
+    # Install fisher plugins
     system.activationScripts.installFisher = lib.mkIf (cfg.plugins != []) ''
       echo "Installing fisher plugins for fish..."
       export HOME=/home/${cfg.mainUser}
@@ -74,4 +72,5 @@ in {
     '';
   };
 }
+
 
