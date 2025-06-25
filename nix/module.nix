@@ -47,6 +47,7 @@ in {
       ".config/fish/aliases.fish".source = "${self}/fish-config/aliases.fish";
       ".config/fish/fish_plugins".source = "${self}/fish-config/fish_plugins";
       ".config/fish/user_variables.fish".source = "${self}/fish-config/user_variables.fish";
+      ".config/fish/config.fish".source = "${self}/fish-config/config.fish"
     };
 
     # Ensure completions-extra exists for user-managed completions
