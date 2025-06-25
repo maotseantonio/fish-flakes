@@ -8,7 +8,7 @@ function nix-maintain
 
         case rebuild
             echo "⚙️ Rebuilding and switching system..."
-            sudo nixos-rebuild switch --flake .#
+            sudo nixos-rebuild switch --flake .#shizuru
 
         case clean
             echo "🧹 Cleaning system generations..."
@@ -23,7 +23,7 @@ function nix-maintain
         case all
             echo "🏁 Full maintenance: update, rebuild, clean, boot"
             nix flake update
-            sudo nixos-rebuild switch --flake .#
+            sudo nixos-rebuild switch --flake .#shizuru
             sudo nix-collect-garbage -d
             sudo nix store gc
             sudo bootctl remove
