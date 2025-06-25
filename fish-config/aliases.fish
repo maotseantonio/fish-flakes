@@ -32,5 +32,6 @@ alias fucknix "sudo nixos-rebuild switch --flake .#shizuru"
 alias cd "z"
 alias zj "zellij"
 alias tm "tmux"
+alias hey "hix-maintain"
 alias foot-ff "fastfetch --raw ~/.config/fastfetch/out.sixel --logo-width 40 --logo-height 20"
 alias listgen "sudo nix-env -p /nix/var/nix/profiles/system --list-generations";
