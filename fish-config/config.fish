@@ -1,3 +1,10 @@
+# Load user-defined aliases and config if available
+if test -f ~/.config/fish/config.local.fish
+    source ~/.config/fish/config.local.fish
+end
+if test -f ~/.config/fish/aliases.local.fish
+    source ~/.config/fish/aliases.local.fish
+end
 source ~/.config/fish/user_variables.fish
 source ~/.config/fish/abbreviations.fish
 source ~/.config/fish/aliases.fish
