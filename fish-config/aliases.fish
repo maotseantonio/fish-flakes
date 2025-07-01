@@ -1,4 +1,5 @@
 alias gcl "git clone"
+alias lock "caelestia shell lock lock"
 alias sv "sudo -E nvim"
 alias fm yazi
 alias ranger yazi
@@ -21,7 +22,7 @@ alias .... "cd ../../.."
 alias fuck "nh os switch"
 alias fucku "nh os switch --update"
 alias rollfuck "sudo nixos-rebuild switch --rollback --flake .#shizuru"
-alias fuckgc "nh clean all"
+alias fuckgc 'nh clean all'
 alias fuckdit "codium ~/shizuru/"
 alias x "exit"
 alias e "clear"
@@ -32,6 +33,9 @@ alias fucknix "sudo nixos-rebuild switch --flake .#shizuru"
 alias cd "z"
 alias zj "zellij"
 alias tm "tmux"
+alias ffnew "ff --config ~/.config/fastfetch/new.jsonc"
+alias ffbochi "ff --config ~/.config/fastfetch/13.jsonc"
+alias ffr "ff --config ~/.config/fastfetch/10.jsonc"
 alias hey "hix-maintain"
 alias foot-ff "fastfetch --raw ~/.config/fastfetch/out.sixel --logo-width 40 --logo-height 20"
 alias listgen "sudo nix-env -p /nix/var/nix/profiles/system --list-generations";

@@ -38,25 +38,6 @@ set -xg W3M_DIR $XDG_DATA_HOME/w3m
 set -xg DOTNET_CLI_HOME $XDG_DATA_HOME/dotnet
 
 # Path
-fish_add_path $XDG_BIN_HOME
-fish_add_path $XDG_BIN_HOME/color-scripts/
-fish_add_path $GOPATH/bin
-fish_add_path $CARGO_HOME/bin
-fish_add_path $XDG_SCRIPT_HOME
-fish_add_path /usr/local/bin
-fish_add_path /usr/local/sbin
-fish_add_path /usr/bin
-fish_add_path /usr/sbin
-fish_add_path /bin
-fish_add_path /sbin
-fish_add_path /usr/lib/rustup/bin
-fish_add_path /usr/lib/go/bin
-fish_add_path $HOME/.dotnet/tools
-fish_add_path $XDG_DATA_HOME/bob/nvim-bin
-fish_add_path $XDG_DATA_HOME/npm/bin
-fish_add_path $XDG_DATA_HOME/nvim/mason/bin
-fish_add_path $HOME/.yarn/bin
-
 # Editor
 set -xg EDITOR nvim
 set -xg VISUAL $EDITOR
@@ -83,3 +64,5 @@ if type -q vivid
     set -xg LS_COLORS (vivid generate catppuccin-macchiato)
 end
 set -xg STARSHIP_LOG error
+
+

@@ -1,5 +1,5 @@
 function fish_greeting
-    if type -q disfetch
-        disfetch
+    if type -q ffnew
+        ffnew
     end
 end
