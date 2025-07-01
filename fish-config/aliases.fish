@@ -38,4 +38,21 @@ alias ffbochi "ff --config ~/.config/fastfetch/13.jsonc"
 alias ffr "ff --config ~/.config/fastfetch/10.jsonc"
 alias hey "hix-maintain"
 alias foot-ff "fastfetch --raw ~/.config/fastfetch/out.sixel --logo-width 40 --logo-height 20"
-alias listgen "sudo nix-env -p /nix/var/nix/profiles/system --list-generations";
+alias listgen "sudo nix-env -p /nix/var/nix/profiles/system --list-generations"
+alias lg 'lazygit'
+alias gs 'git status'
+alias ga 'git add'
+alias gc 'git commit'
+alias gca 'git commit --amend'
+alias gcm 'git commit --message'
+alias gk 'git checkout'
+alias gd 'git diff'
+alias gf 'git fetch'
+alias gl 'git log'
+alias gp 'git push'
+alias gpf 'git push --force-with-lease'
+alias gr 'git reset'
+alias gt 'git stash'
+alias gtp 'git stash pop'
+alias gu 'git pull'
+
