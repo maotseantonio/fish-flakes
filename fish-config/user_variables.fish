@@ -37,7 +37,6 @@ set -xg GTK2_RC_FILES $XDG_CONFIG_HOME/gtk-2.0/gtkrc
 set -xg W3M_DIR $XDG_DATA_HOME/w3m
 set -xg DOTNET_CLI_HOME $XDG_DATA_HOME/dotnet
 
-# Path
 # Editor
 set -xg EDITOR nvim
 set -xg VISUAL $EDITOR
